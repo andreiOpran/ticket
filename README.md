@@ -69,7 +69,13 @@ For operators of any ticketing/payment system relying on a displayed code:
 
 ## Technical notes
 
-One `index.html`, all markup/CSS/JS inline, one CDN dependency (`qrcode-generator`) with a deterministic pseudo-QR fallback if it fails to load.
+A plain static site split across three files, no build step:
+
+- `index.html` — markup only.
+- `styles.css` — the phone-frame layout and theme (CSS custom properties for colors).
+- `script.js` — all behavior: rotating QR generation, the validity countdown, and the progress bar.
+
+One CDN dependency (`qrcode-generator`) with a deterministic pseudo-QR fallback if it fails to load. Logos and favicon live in `assets/`.
 
 Live demo: **https://andreiopran.github.io/ticket/**
 
