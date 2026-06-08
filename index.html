@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>24pay Ticket</title>
+<title>24pay</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
 <style>
   :root{
@@ -76,7 +76,7 @@
     display:grid;
     grid-template-columns:32px 1fr;
     align-items:center;
-    padding:26px 20px 18px;
+    padding:16px 20px 12px;
     gap:6px;
     flex-shrink:0;
     background:var(--bg);
@@ -103,8 +103,11 @@
     display:flex;
     flex-direction:column;
     justify-content:safe center;
+    scrollbar-width:none;
+    -ms-overflow-style:none;
   }
-  .content{padding:10px 16px 28px;display:flex;flex-direction:column;gap:16px;}
+  .scroll-area::-webkit-scrollbar{width:0;height:0;display:none;}
+  .content{padding:4px 16px 28px;display:flex;flex-direction:column;gap:16px;}
 
   .card{
     background:var(--card);
@@ -305,8 +308,10 @@
   /* ---------- ticket validity (90 min) ---------- */
   var TOTAL_MIN=90;
   var now=new Date();
-  // elapsed kept >=10 min after purchase and >=10 min before expiry
-  var elapsedMin=Math.floor(Math.random()*(TOTAL_MIN-20+1))+10; // 10..80 min in
+  // elapsed kept >=10 min after purchase and >=30 min before expiry
+  var MIN_SINCE_BUY=10, MIN_BEFORE_EXPIRY=30;
+  var span=TOTAL_MIN-MIN_SINCE_BUY-MIN_BEFORE_EXPIRY; // 50
+  var elapsedMin=Math.floor(Math.random()*(span+1))+MIN_SINCE_BUY; // 10..60 min in
   var purchase=new Date(now.getTime()-elapsedMin*60000);
   var validTo=new Date(purchase.getTime()+TOTAL_MIN*60000);
 
