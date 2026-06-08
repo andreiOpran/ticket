@@ -1,8 +1,16 @@
 # Fake Transit Ticket: Visual-Trust Vulnerability Demo
 
-A single-file static web page that visually clones the **24pay / STB** (Bucharest public transit) "control code" ticket screen, built with nothing but HTML, CSS, and JavaScript plus brand logos found online.
+A single-file static web page that visually clones the **24pay / STB** (Bucharest public transit) "control code" ticket screen, built with nothing but HTML, CSS, and JavaScript plus brand logos collected from open sources (basic OSINT-style asset gathering: a Google Images search for the 24pay and Banca Transilvania logos).
 
 > ⚠️ **This is a security-research and educational demonstration only.** See the [disclaimer](#disclaimer) before reading further. Do **not** use it to evade fares.
+
+## Real vs. clone
+
+| Real 24pay app | This clone |
+| :---: | :---: |
+| ![Real 24pay ticket screen](screenshots/real.jpeg) | ![Cloned ticket screen](screenshots/mock.jpeg) |
+
+Same layout, logos, QR, countdown, and progress bar. At a glance they are interchangeable; only scanning the QR tells them apart.
 
 ## What it demonstrates
 
@@ -14,6 +22,7 @@ The weak link is **the verification process, not the technology.** The system is
 
 This sits at the intersection of:
 
+- **OSINT / open-source asset collection:** the brand logos that sell the disguise are public and one image search away; their availability proves nothing about authenticity.
 - **Application cloning:** branded UIs are trivially copyable; the logo and layout prove nothing.
 - **Social engineering:** the artifact is designed to satisfy a human's *expectation* of what a valid ticket looks like.
 - **Process superficiality:** when a manual visual check stands in for an automated/cryptographic one, it becomes a backdoor.
