@@ -7,14 +7,14 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
 <style>
   :root{
-    --bg:#0d0e12;
-    --card:#1c1e25;
-    --card-2:#23262e;
+    --bg:#171a1f;
+    --card:#2f333c;
+    --card-2:#2f333c;
     --muted:#6f7480;
     --text:#f2f3f5;
-    --yellow:#f4d224;
-    --green:#2fa84f;
-    --track:#dfe3e6;
+    --yellow:#e7cf35;
+    --green:#167b4c;
+    --track:#e5e9ec;
     --qr-border:#1f55ff;
   }
   *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
@@ -91,7 +91,7 @@
     display:flex;align-items:center;justify-content:center;gap:18px;
   }
   .brandbar .pay{height:30px;}
-  .brandbar .support{color:var(--text);font-size:11px;white-space:nowrap;}
+  .brandbar .support{color:var(--text);font-size:10px;white-space:nowrap;}
   .brandbar .bt{height:40px;}
 
   /* ---------- content ---------- */
@@ -102,8 +102,9 @@
     -webkit-overflow-scrolling:touch;
     display:flex;
     flex-direction:column;
+    justify-content:safe center;
   }
-  .content{padding:18px 16px 28px;display:flex;flex-direction:column;gap:16px;min-height:100%;justify-content:center;}
+  .content{padding:18px 16px 28px;display:flex;flex-direction:column;gap:16px;}
 
   .card{
     background:var(--card);
@@ -126,7 +127,7 @@
 
   .countdown{
     text-align:center;
-    font-size:21px;
+    font-size:18px;
     font-weight:400;
     margin-top:20px;
     line-height:1.5;
@@ -152,7 +153,7 @@
     display:flex;
     justify-content:space-between;
     color:var(--muted);
-    font-size:18px;
+    font-size:15px;
     font-variant-numeric:tabular-nums;
   }
 
@@ -162,8 +163,8 @@
     display:flex;justify-content:space-between;align-items:baseline;gap:12px;
     padding:9px 0;
   }
-  .row .k{color:var(--muted);font-size:18px;white-space:nowrap;}
-  .row .v{color:var(--text);font-size:19px;font-weight:400;text-align:right;font-variant-numeric:tabular-nums;}
+  .row .k{color:var(--muted);font-size:15px;white-space:nowrap;}
+  .row .v{color:var(--text);font-size:16px;font-weight:400;text-align:right;font-variant-numeric:tabular-nums;}
   .email-btn{
     margin-top:18px;
     width:100%;
@@ -172,7 +173,7 @@
     color:var(--yellow);
     border-radius:12px;
     padding:12px;
-    font-size:18px;
+    font-size:15px;
     font-weight:400;
     cursor:pointer;
     transition:background .15s ease;
